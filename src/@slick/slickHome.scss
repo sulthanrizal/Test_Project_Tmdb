@@ -1,0 +1,221 @@
+.slider-container {
+    cursor: pointer;
+
+    .slider {
+
+        .slick-dots {
+            position: absolute;
+            top: 750px;
+            z-index: 2;
+
+            .slick-active button {
+                background: red !important;
+                color: white;
+            }
+
+            .slick-active button::before {
+                color: red;
+            }
+
+            button {
+                background: white;
+                border-radius: 9999px;
+            }
+
+            button::before {
+                border-radius: 9999px;
+                color: white;
+            }
+
+            button:hover {
+                background: #FF6347;
+                color: #FF6347;
+            }
+
+            button:hover::before {
+                color: #FF6347;
+                background: #FF6347;
+            }
+
+        }
+
+
+        .home {
+            .img-link {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+                img {
+                    object-fit: cover;
+                    height: 100vh;
+                    width: 100vw;
+                }
+
+                .text-img {
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 1;
+                    position: absolute;
+                    height: 90vh;
+                    top: 0;
+                    padding: 450px 160px 70px 160px;
+
+                    .title {
+                        font-size: 32px;
+                        font-weight: 600;
+                    }
+
+                    .deskripsion {
+                        width: 700px;
+                        margin-top: -35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1050px) {
+    .slider-container {
+        .slider {
+            .slick-dots {
+                top: 490px;
+
+                button {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                .slick-active button {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                .slick-active button::before {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+
+            .home {
+                .img-link {
+                    img {
+                        padding-top: 70px;
+                        height: 500px;
+                    }
+
+                    .text-img {
+                        top: 300px;
+                        padding: 0px 0px 0px 0px;
+                        left: 50px;
+                        position: absolute;
+
+                        .title {
+                            font-size: 25px;
+                            font-weight: 600;
+                        }
+
+                        .deskripsion {
+                            width: 700px;
+                            margin-top: -20px;
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+@media(max-width:650px) {
+    .slider-container {
+        .slider {
+            .slick-dots {
+                top: 263px;
+            }
+
+            .home {
+                .img-link {
+                    img {
+                        height: 250px;
+                    }
+
+                    .text-img {
+                        top: 100px;
+
+                        .deskripsion {
+                            // border: 1px solid red;
+                            width: 370px !important;
+                            margin-top: -20px;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .slider-container {
+        .slider {
+            .slick-dots {
+                top: 410px;
+
+                button {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                .slick-active button {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                .slick-active button::before {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+
+            .home {
+                .img-link {
+                    img {
+                        padding-top: 63px;
+                        height: 400px;
+                    }
+
+                    .text-img {
+                        top: 250px;
+                        padding: 0px 0px 0px 0px;
+                        height: 200px;
+                        left: 50px;
+
+                        .title {
+                            font-size: 25px;
+                            font-weight: 600;
+                        }
+
+                        .deskripsion {
+                            width: 600px;
+                            margin-top: -20px;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

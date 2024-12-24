@@ -1,0 +1,71 @@
+.container-riview-ls {
+    padding-top: 90px;
+
+    .title-riview {
+        .text-title {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+        }
+    }
+
+    .body-riview {
+        display: flex;
+
+
+
+        .input-riview {
+            padding-top: 8px;
+            padding-left: 32px;
+            width: 100%;
+            // display: flex;
+
+            .input-btn {
+                display: flex;
+                gap: 5px;
+
+                input {
+                    width: 816px;
+                    border-radius: 10px;
+                    padding: 16px 0px 30px 15px;
+                    border: 1px solid white;
+                }
+
+                input::placeholder {
+                    font-size: 16px;
+                    font-weight: 300;
+                    font-family: 'Poppins';
+                }
+
+                button {
+                    padding: 20px;
+                    border-radius: 10px;
+                    background: white;
+                    border: 1px solid white;
+                    outline: none;
+                    cursor: pointer;
+                }
+
+            }
+
+            .comments-all {
+                .comment-item {
+                    display: flex;
+
+                    .comment-save-edit {
+                        .btn {
+                            background: white !important;
+                        }
+                    }
+
+                    .comment-no-edit {
+                        .btn {
+                            background: white !important;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,213 @@
+.details-movie-container {
+    padding: 72px 100px 0px 100px;
+
+    p {
+        margin: 0px;
+    }
+
+    .details-movie {
+        display: flex;
+
+        .img {
+            img {
+                height: 500px;
+                width: 350px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .poster {
+                display: none;
+            }
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 50px 40px;
+
+            .text-header {
+                display: flex;
+
+                .title {
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+            }
+
+            .text-body {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+
+
+                .body-1 {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    .genres {
+                        display: flex;
+                        gap: 8px;
+
+
+                        .text-genres {
+                            border-radius: 10px;
+                            padding: 10px;
+                            background: white;
+                            color: black;
+                        }
+                    }
+
+                    .release-date {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 0px 8px;
+
+                        .icon-calender {
+                            color: white;
+                        }
+                    }
+
+                    .runtime {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 0px 8px;
+
+                        .icon-clock {
+                            color: white;
+                        }
+                    }
+
+                    .rate {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 0px 8px;
+
+                        .icon-star {
+                            color: white;
+                        }
+
+                    }
+                }
+            }
+
+            .text-footer {
+                display: flex;
+                flex-direction: column;
+
+                .column {
+                    display: flex;
+                    gap: 5px;
+
+                    .text-left {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 200px;
+                    }
+
+                    .text-right {
+                        display: flex;
+
+                        .text-content {
+                            display: flex;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+span {
+    color: white;
+}
+
+
+@media(max-width:500px) {
+    .details-movie-container {
+        padding: 0px;
+
+        .details-movie {
+            .img {
+                img {
+                    padding-top: 59px;
+                    height: 400px;
+                    border-radius: 0px;
+                }
+
+                .poster {
+                    display: none !important;
+                }
+            }
+
+            .text {
+                padding: 20px 50px 0px 50px !important;
+
+                .text-body {
+                    .body-1 {
+                        .genres {
+                            .text-genres {
+                                font-size: .7rem;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .riview-flim {
+        padding: 0px 50px;
+    }
+}
+
+@media(max-width:1050px) {
+    .details-movie-container {
+
+        .details-movie {
+            flex-direction: column;
+
+            .img {
+                position: relative;
+
+                .poster {
+                    top: 50px;
+                    left: 25px;
+                    height: 400px;
+                    z-index: 2;
+                    width: 300px;
+                    position: absolute;
+                    border-radius: 10px;
+                    display: block;
+                }
+
+                img {
+                    width: 100%;
+                    height: 500px;
+                    object-fit: cover;
+                }
+            }
+
+            .text {
+                padding: 50px 0px;
+
+                .text-body {
+                    .body-1 {
+                        flex-direction: column;
+                        align-items: start;
+
+                    }
+
+                }
+            }
+        }
+    }
+}
