@@ -1,6 +1,5 @@
 import Home from "../@page/home/home";
 import Movies from "../@page/movies/movies";
-import Series from "../@page/series/series";
 import ViewMovie from "../@page/detailsMovie";
 
 const router = [
