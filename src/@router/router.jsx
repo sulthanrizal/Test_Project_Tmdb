@@ -13,10 +13,6 @@ const router = [
         element: <Movies />
     },
     {
-        path: '/series',
-        element: <Series />
-    },
-    {
         path: '/view-movie/:id',
         element: <ViewMovie />
     }
