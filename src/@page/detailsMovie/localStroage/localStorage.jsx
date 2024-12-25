@@ -85,7 +85,8 @@ const LocalStorage = ({ movieName }) => {
             if (item?.id === comment?.id) {
                 const obj = {
                     ...comment,
-                    text: editingValue
+                    text: editingValue,
+                    date: new Date()
                 }
                 return obj
             }
