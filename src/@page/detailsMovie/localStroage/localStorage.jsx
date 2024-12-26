@@ -3,6 +3,7 @@ import './localStorage.scss';
 import Pp from './pp.png';
 import { getAccount } from "../../../axios";
 import moment from "moment";
+import { accountDami } from "./accountDami";
 
 const LocalStorage = ({ movieName }) => {
     const today = new Date()
@@ -32,12 +33,12 @@ const LocalStorage = ({ movieName }) => {
     }, [])
 
 
-    const getFormatDate = () => {
-        const day = String(today.getDate()).padStart(2, '0');
-        const month = String(today.getMonth() + 1).padStart(2, '0');
-        const year = today.getFullYear();
-        setDate(`${day}/${month}/${year}`)
-    }
+    // const getFormatDate = () => {
+    //     const day = String(today.getDate()).padStart(2, '0');
+    //     const month = String(today.getMonth() + 1).padStart(2, '0');
+    //     const year = today.getFullYear();
+    //     setDate(`${day}/${month}/${year}`)
+    // }
 
     const handleClick = () => {
         const newComment = {
@@ -53,7 +54,7 @@ const LocalStorage = ({ movieName }) => {
             localStorage.setItem('comments', JSON.stringify(updatedComments))
             setCommentTextInputValue("")
         }
-        getFormatDate()
+        // getFormatDate()
     }
 
 
@@ -107,6 +108,7 @@ const LocalStorage = ({ movieName }) => {
             <div className="body-riview">
                 <div className="img">
                     <img src={Pp} alt="Profile" />
+
                 </div>
                 <div className="input-riview">
                     <p className="name">
@@ -130,6 +132,7 @@ const LocalStorage = ({ movieName }) => {
                     const text = item?.text
                     const date = item?.date
                     const id = item?.id
+                    const pp = item?.pp
                     return (
                         <div key={index} className="comment-item">
                             {editingIndex === index ? (
@@ -145,6 +148,10 @@ const LocalStorage = ({ movieName }) => {
                                 <div className="comment-no-edit">
                                     <p>{moment(date).format("DD MMM YYYY")}</p>
                                     <p>{text}</p>
+                                    <img src={pp} />
+                                    {
+                                        console.log(pp, 'acount')
+                                    }
                                     <button className="btn" onClick={() => handleEdit(text, index)}>Edit</button>
                                     <button className="btn" onClick={() => handleRemove(id)}>Remove</button>
                                     <div ref={commentsEndRef}></div>
