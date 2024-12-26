@@ -18,6 +18,7 @@ const Header = () => {
 
     const onNav = (id) => {
         const element = document?.getElementById(id)
+        console.log(id, 'id', element?.clientHeight)
 
         if (window.innerWidth <= 768) {
             window.scrollTo({ top: element.offsetTop - 65, behavior: "smooth" });
@@ -27,8 +28,8 @@ const Header = () => {
 
             if (id === 'listmovies') {
                 window.scrollTo({ top: element?.clientHeight - 70, behavior: "smooth" });
-            } else if (id === 'slick-container') {
-                window.To({ top: element?.clientHeight - 1000, behavior: "smooth" });
+            } else if (id == 'slick-container') {
+                window.To({ top: element?.clientHeight - 10000, behavior: "smooth" });
             } else {
                 console.log('Error: Invalid ID');
             }
