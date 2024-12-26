@@ -35,7 +35,7 @@ const DetailsMovie = () => {
     }, [runtimeStart])
 
     return (
-        <div className="details-movie-container">
+        <div className="details-movie-container" id="details-container">
             <div className="details-movie">
                 <div className="img">
                     <img src={`${imgUrl}${imgPoster}`} />
