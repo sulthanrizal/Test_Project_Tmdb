@@ -1,7 +1,6 @@
 :root {
   font-family: "Poppins";
 }
-
 p,
 .p {
   color: white;
@@ -23,7 +22,7 @@ a:hover {
 }
 
 body {
-  background: black;
+  /* background: black; */
   margin: 0;
   width: 100%;
   place-items: center;
