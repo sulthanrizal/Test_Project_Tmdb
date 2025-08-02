@@ -1,5 +1,5 @@
 import "./index.scss";
-// import SlickHome from "../../@slick/slickHome";
+import SlickHome from "../../@slick/slickHome";
 import { useEffect, useRef, useState } from "react";
 import { getListMovie } from "../../axios";
 import { Link } from "react-router";
@@ -32,9 +32,9 @@ const Home = () => {
   }, [keywords, listMovie]);
   return (
     <div className="container-home all">
-      {/* <div className="movie-trending">
+      <div className="movie-trending">
         <SlickHome imgUrl={imgUrl} />
-      </div> */}
+      </div>
       <div className="list-movie" id="listmovies">
         <div className="text-list" ref={inputRef}>
           <p className="title-list">List Movies</p>

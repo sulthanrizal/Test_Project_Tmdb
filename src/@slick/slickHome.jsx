@@ -1,36 +1,30 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./slickHome.scss";
 import { getMovieTrending } from "../axios";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router";
-function SlickHome({ imgUrl }) {
-  const [movie, setMovie] = useState([]);
-  const [oldSlide, setOldSlide] = useState(0);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [activeSlide2, setActiveSlide2] = useState(0);
+import { Link } from "react-router-dom";
 
-  var settings = {
-    dots: true,
-    infinite: false,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    beforeChange: (current, next) => {
-      setOldSlide(current);
-      setActiveSlide(next);
-    },
-    afterChange: (current) => setActiveSlide2(current),
-  };
+export default function SlickHome({ imgUrl }) {
+  const [movie, setMovie] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     getMovieTrending(setMovie);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % 3);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="slider-container" id="slick-container">
-      <Slider {...settings} className="slider">
+    <div className="manual-slider-container" id="slick-container">
+      <div
+        className="slider-track"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
         {movie.slice(0, 3).map((item, index) => {
           const title = item?.title;
           const overview = item?.overview;
@@ -47,9 +41,7 @@ function SlickHome({ imgUrl }) {
             </div>
           );
         })}
-      </Slider>
+      </div>
     </div>
   );
 }
-
-export default SlickHome;

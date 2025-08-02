@@ -1,221 +1,46 @@
-.slider-container {
-    cursor: pointer;
+.manual-slider-container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
 
-    .slider {
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+  }
 
-        .slick-dots {
-            position: absolute;
-            top: 750px;
-            z-index: 2;
+  .home {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
 
-            .slick-active button {
-                background: red !important;
-                color: white;
-            }
+    .img-link {
+      position: relative;
 
-            .slick-active button::before {
-                color: red;
-            }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-            button {
-                background: white;
-                border-radius: 9999px;
-            }
+      .text-img {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        color: white;
+        z-index: 1;
 
-            button::before {
-                border-radius: 9999px;
-                color: white;
-            }
-
-            button:hover {
-                background: #FF6347;
-                color: #FF6347;
-            }
-
-            button:hover::before {
-                color: #FF6347;
-                background: #FF6347;
-            }
-
+        .title {
+          font-size: 2rem;
+          font-weight: bold;
         }
 
-
-        .home {
-            .img-link {
-                display: flex;
-                flex-direction: column;
-                position: relative;
-
-                img {
-                    object-fit: cover;
-                    height: 100vh;
-                    width: 100vw;
-                }
-
-                .text-img {
-                    display: flex;
-                    flex-direction: column;
-                    z-index: 1;
-                    position: absolute;
-                    height: 90vh;
-                    top: 0;
-                    padding: 450px 160px 70px 160px;
-
-                    .title {
-                        font-size: 32px;
-                        font-weight: 600;
-                    }
-
-                    .deskripsion {
-                        width: 700px;
-                        margin-top: -35px;
-                    }
-                }
-            }
+        .deskripsion {
+          font-size: 1rem;
+          width: 50%;
         }
+      }
     }
-}
-
-@media(max-width:1050px) {
-    .slider-container {
-        .slider {
-            .slick-dots {
-                top: 490px;
-
-                button {
-                    width: 15px;
-                    height: 15px;
-                }
-
-                .slick-active button {
-                    width: 15px;
-                    height: 15px;
-                }
-
-                .slick-active button::before {
-                    width: 15px;
-                    height: 15px;
-                }
-            }
-
-            .home {
-                .img-link {
-                    img {
-                        padding-top: 70px;
-                        height: 500px;
-                    }
-
-                    .text-img {
-                        top: 300px;
-                        padding: 0px 0px 0px 0px;
-                        left: 50px;
-                        position: absolute;
-
-                        .title {
-                            font-size: 25px;
-                            font-weight: 600;
-                        }
-
-                        .deskripsion {
-                            width: 700px;
-                            margin-top: -20px;
-
-                        }
-                    }
-                }
-
-            }
-        }
-    }
-}
-
-
-@media(max-width:650px) {
-    .slider-container {
-        .slider {
-            .slick-dots {
-                top: 263px;
-            }
-
-            .home {
-                .img-link {
-                    img {
-                        height: 250px;
-                    }
-
-                    .text-img {
-                        top: 100px;
-
-                        .deskripsion {
-                            // border: 1px solid red;
-                            width: 370px !important;
-                            margin-top: -20px;
-                            display: -webkit-box;
-                            -webkit-line-clamp: 3;
-                            -webkit-box-orient: vertical;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 800px) {
-    .slider-container {
-        .slider {
-            .slick-dots {
-                top: 410px;
-
-                button {
-                    width: 15px;
-                    height: 15px;
-                }
-
-                .slick-active button {
-                    width: 15px;
-                    height: 15px;
-                }
-
-                .slick-active button::before {
-                    width: 15px;
-                    height: 15px;
-                }
-            }
-
-            .home {
-                .img-link {
-                    img {
-                        padding-top: 63px;
-                        height: 400px;
-                    }
-
-                    .text-img {
-                        top: 250px;
-                        padding: 0px 0px 0px 0px;
-                        height: 200px;
-                        left: 50px;
-
-                        .title {
-                            font-size: 25px;
-                            font-weight: 600;
-                        }
-
-                        .deskripsion {
-                            width: 600px;
-                            margin-top: -20px;
-                            display: -webkit-box;
-                            -webkit-line-clamp: 3;
-                            -webkit-box-orient: vertical;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
+  }
 }
